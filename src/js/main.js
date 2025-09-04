@@ -1,22 +1,18 @@
 const tagVersiculos = document.getElementById("versiculos"); 
 
-const fetchData = async ()  => {  
-try { 
-  const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/versiculos`);
-  const data = await res.json();
+const fetchData = async () => {
+  try {
 
-  tagVersiculos.textContent = data.texto;
-  
-  console.log(data.texto);
-} 
+    const res = await fetch(import.meta.env.VITE_BACKEND_URL);
+    
+    const data = await res.json();
 
-catch (error) {
+    tagVersiculos.textContent = data.texto;
+    console.log(data.texto);
 
-  console.error("Erro ao buscar versículos:", error);
-  tagVersiculos.textContent = "Erro ao carregar versículo.";
-
+  } catch (err) {
+    console.error("Erro ao buscar versículo:", err);
   }
-
 };
 
 window.fetchData = fetchData;
