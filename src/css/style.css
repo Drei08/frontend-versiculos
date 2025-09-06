@@ -5,23 +5,28 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; 
 }
   
 body{
     background: #222;
     color: #fff;
-    padding: 2rem;
+    padding: 4rem 27rem;
+   
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
 h1{
     font-size: 2rem;
+    text-align: center;
 }
 
 h2{
     font-size: 1.25rem;
 }
-/* 
-.type{
-    display: none
-} */
