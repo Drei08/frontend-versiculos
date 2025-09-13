@@ -9,7 +9,12 @@ const fetchData = async () => {
   tagVersiculos.textContent = data.versiculos.texto;
   
   console.log(data.versiculos.texto);
+};
 
+window.onload = () => {
+  if (!localStorage.getItem("user")) {  
+    window.location.href = "/login.html";
+  }
 };
 
 window.fetchData = fetchData;
