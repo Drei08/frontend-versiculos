@@ -3,7 +3,7 @@ console.log("META", import.meta.env);
 
 const fetchData = async () => {
   console.log("META", import.meta.env);
-  const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/versiculos` );
+  const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/versiculos`);
   const data = await res.json();
   
   tagVersiculos.textContent = data.versiculos.texto;
