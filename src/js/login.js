@@ -19,9 +19,26 @@ const login = async (login) => {
     body: bodyString,
   });
 
-  if(res?.status == 200){
-  localStorage.setItem("user", bodyString);
-  window.location.href = "/";
+  const responseMessage = await res.json();
+  console.log(responseMessage);
+
+  if(res?.status === 200) {
+    Toastify({
+      text: responseMessage?.message ?? "Login com Sucesso!",
+      className: "info",
+    }).showToast();
+
+    setTimeout(() => {
+      localStorage.setItem("user", bodyString);
+      window.location.href = "/";
+    }, 1000);
+
+  } 
+  else {
+    Toastify({
+      text: responseMessage?.message ?? "Dados Errados!",
+      className: "toast__error",
+    }).showToast();
   }
 };
 

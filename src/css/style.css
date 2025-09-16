@@ -21,7 +21,7 @@ h1{
 h2{
     font-size: 1.25rem;
 }
-/* 
-.type{
-    display: none
-} */
+
+.toast__error{
+  background: rgb(248, 64, 64) !important;
+}
