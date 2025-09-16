@@ -6,6 +6,8 @@ const login = async (login) => {
   const email = formData.get("email");
   const password = formData.get("password");
 
+  localStorage.removeItem("user");
+
   const bodyString = JSON.stringify({
       email,
       password,
